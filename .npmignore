@@ -1,0 +1,7 @@
+.idea
+.editorconfig
+.jshintrc
+.npmignore
+node_modules
+Gruntfile.js
+npm-debug.log
