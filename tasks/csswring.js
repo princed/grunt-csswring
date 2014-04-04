@@ -4,6 +4,7 @@ var path = require('path');
 var postcss = require('postcss');
 var csswring = require('csswring');
 var chalk = require('chalk');
+var maxmin = require('maxmin');
 
 module.exports = function(grunt) {
 
@@ -65,7 +66,8 @@ module.exports = function(grunt) {
         options = this.options({
             banner: undefined,
             map: undefined,
-            mapInline: undefined
+            mapInline: undefined,
+            report: 'min'
         });
 
         minifier = postcss().use(csswring.processor);
@@ -91,7 +93,7 @@ module.exports = function(grunt) {
                     var output = minify(input, filepath, dest);
 
                     grunt.file.write(dest, output.css);
-                    grunt.log.writeln('File ' + chalk.cyan(dest) + ' created.');
+                    grunt.log.writeln('File ' + chalk.cyan(dest) + ' created: ' + maxmin(input, output.css, options.report === 'gzip') );
 
                     if (output.map) {
                         grunt.file.write(dest + '.map', output.map);
