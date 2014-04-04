@@ -1,4 +1,4 @@
-# grunt-cswring
+# grunt-csswring
 
 > [CSSWring](https://github.com/hail2u/node-csswring) minifies CSS and provides source maps using [PostCSS](https://github.com/ai/postcss).
 
