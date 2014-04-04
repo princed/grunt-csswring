@@ -52,14 +52,12 @@ module.exports = function(grunt) {
      * @returns {{css: string, map?: string}}
      */
     function minify(input, from, to) {
-        var output = minifier.process(input, {
-            map: getMapOption(from),
-            inlineMap: options.mapInline,
-            from: from,
-            to: to
+        return minifier.process(input, {
+          map: getMapOption(from),
+          inlineMap: options.mapInline,
+          from: from,
+          to: to
         });
-
-        return output;
     }
 
     grunt.registerMultiTask('csswring', 'Minify CSS files using PostCSS-based CSSWring.', function() {
