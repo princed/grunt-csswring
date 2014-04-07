@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 
             // New line after banner
             if (css.rules[1]) {
-              css.rules[1].before = '\n';
+                css.rules[1].before = '\n';
             }
         };
     }
@@ -53,10 +53,10 @@ module.exports = function(grunt) {
      */
     function minify(input, from, to) {
         return minifier.process(input, {
-          map: getMapOption(from),
-          inlineMap: options.mapInline,
-          from: from,
-          to: to
+            map: getMapOption(from),
+            inlineMap: options.mapInline,
+            from: from,
+            to: to
         });
     }
 
@@ -71,7 +71,7 @@ module.exports = function(grunt) {
         minifier = postcss().use(csswring.processor);
 
         if (typeof options.banner === 'string') {
-          minifier.use(setBanner(options.banner));
+            minifier.use(setBanner(options.banner));
         }
 
         this.files.forEach(function(f) {
