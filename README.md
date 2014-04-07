@@ -1,6 +1,6 @@
 # grunt-csswring
 
-> [CSSWring](https://github.com/hail2u/node-csswring) minifies CSS and provides source maps using [PostCSS](https://github.com/ai/postcss).
+> Source Maps aware CSS minification task. Based on [CSSWring](https://github.com/hail2u/node-csswring) based on [PostCSS](https://github.com/ai/postcss).
 
 ## Getting Started
 This plugin requires Grunt `~0.4.0`
