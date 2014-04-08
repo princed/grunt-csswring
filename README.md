@@ -2,6 +2,8 @@
 
 > Source Maps aware CSS minification task. Based on [CSSWring](https://github.com/hail2u/node-csswring) based on [PostCSS](https://github.com/ai/postcss).
 
+[![Dependency Status](https://gemnasium.com/princed/grunt-csswring.svg)](https://gemnasium.com/princed/grunt-csswring)
+
 ## Getting Started
 This plugin requires Grunt `~0.4.0`
 
