@@ -1,7 +1,7 @@
 {
   "name": "grunt-csswring",
   "description": "Minify CSS files using PostCSS-based CSSWring.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/princed/grunt-csswring",
   "author": {
     "name": "Eugene Datsky",
@@ -20,9 +20,6 @@
       "url": "https://github.com/princed/grunt-csswring/blob/master/LICENSE-MIT"
     }
   ],
-  "engines": {
-    "node": ">= 0.8.0"
-  },
   "dependencies": {
     "chalk": "~0.4.0",
     "csswring": "git://github.com/princed/node-csswring.git#preserve-hacks",
