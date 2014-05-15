@@ -68,7 +68,13 @@ module.exports = function(grunt) {
             report: 'min'
         });
 
-        minifier = postcss().use(csswring.processor);
+        var minifierOptions = {}
+
+        if (options.preserveHacks) {
+          minifierOptions.preserveHacks = true;
+        }
+
+        minifier = postcss().use(csswring(minifierOptions));
 
         if (typeof options.banner === 'string') {
             minifier.use(setBanner(options.banner));

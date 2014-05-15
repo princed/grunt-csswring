@@ -67,7 +67,13 @@ If the option isn't specified, PostCSS will inline its map if a map from a previ
 
 You can specify `true` or `false` to force that behaviour as you like.
 
-#### report
+#### options.preserveHacks
+Type: `Boolean `
+Default value: `undefined`
+
+Allows to preserve properties hacks like `*display: inline;`
+
+#### options.report
 Choices: 'min', 'gzip' Default: 'min'
 Either report only minification result or report minification and gzip results. Using 'gzip' will make the task take 5-10x longer to complete.
 
