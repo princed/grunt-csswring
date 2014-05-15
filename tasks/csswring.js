@@ -68,7 +68,7 @@ module.exports = function(grunt) {
             report: 'min'
         });
 
-        var minifierOptions = {}
+        var minifierOptions = {};
 
         if (options.preserveHacks) {
           minifierOptions.preserveHacks = true;
