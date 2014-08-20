@@ -71,7 +71,7 @@ module.exports = function(grunt) {
 
         // We have to set this option on each task run
         csswring.preserveHacks = !!options.preserveHacks;
-        minifier = postcss().use(csswring.processor);
+        minifier = postcss().use(csswring.postcss);
 
         if (typeof options.banner === 'string') {
             minifier.use(setBanner(options.banner));
