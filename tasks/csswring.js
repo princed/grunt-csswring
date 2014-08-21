@@ -66,12 +66,16 @@ module.exports = function(grunt) {
             map: undefined,
             mapInline: undefined,
             preserveHacks: undefined,
+            removeAllComments: undefined,
             report: 'min'
         });
 
-        // We have to set this option on each task run
-        csswring.preserveHacks = !!options.preserveHacks;
-        minifier = postcss().use(csswring.processor);
+        var processor = csswring({
+          preserveHacks: !!options.preserveHacks,
+          removeAllComments: !!options.removeAllComments
+        }).postcss;
+
+        minifier = postcss().use(processor);
 
         if (typeof options.banner === 'string') {
             minifier.use(setBanner(options.banner));

@@ -40,7 +40,7 @@ grunt.initConfig({
 ### Options
 
 #### options.banner
-Type: `String|undefined `
+Type: `String|undefined`
 Default value: `undefined`
 
 Allows to add comment to the beginning of minified files. 
@@ -68,14 +68,21 @@ If the option isn't specified, PostCSS will inline its map if a map from a previ
 You can specify `true` or `false` to force that behaviour as you like.
 
 #### options.preserveHacks
-Type: `Boolean `
+Type: `Boolean|undefined`
 Default value: `undefined`
 
 Allows to preserve properties hacks like `*display: inline;`
 
+### options.removeAllComments
+Type: `Boolean|undefined`
+Default value: `undefined`
+
+By default, CSSWring keeps a comment that start with `/*!`. If you want to remove all comments, set option to `true`.
+
 #### options.report
-Choices: 'min', 'gzip' Default: 'min'
-Either report only minification result or report minification and gzip results. Using 'gzip' will make the task take 5-10x longer to complete.
+Choices: `min`, `gzip`
+Default value: `min`
+Either report only minification result or report minification and gzip results. Using `gzip` will make the task take 5-10x longer to complete.
 
 
 ### Usage Examples

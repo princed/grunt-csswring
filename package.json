@@ -1,7 +1,7 @@
 {
   "name": "grunt-csswring",
   "description": "Minify CSS files using PostCSS-based CSSWring.",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "homepage": "https://github.com/princed/grunt-csswring",
   "author": {
     "name": "Eugene Datsky",
@@ -21,13 +21,13 @@
     }
   ],
   "dependencies": {
-    "chalk": "~0.4.0",
-    "csswring": "~0.2.0",
-    "maxmin": "~0.2.0",
-    "postcss": "~0.3.4"
+    "chalk": "^0.5.0",
+    "csswring": "^1.0.1",
+    "maxmin": "^1.0.0",
+    "postcss": "^2.2.0"
   },
   "peerDependencies": {
-    "grunt": "~0.4.2"
+    "grunt": "^0.4.5"
   },
   "keywords": [
     "gruntplugin",
