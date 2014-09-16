@@ -1,7 +1,7 @@
 {
   "name": "grunt-csswring",
   "description": "Minify CSS files using PostCSS-based CSSWring.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "homepage": "https://github.com/princed/grunt-csswring",
   "author": {
     "name": "Eugene Datsky",
