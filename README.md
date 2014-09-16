@@ -43,7 +43,7 @@ grunt.initConfig({
 Type: `String|undefined`
 Default value: `undefined`
 
-Allows to add comment to the beginning of minified files. 
+Allows to add comment to the beginning of minified files.
 
 #### options.map
 Type: `Boolean|String|undefined`
@@ -73,7 +73,7 @@ Default value: `undefined`
 
 Allows to preserve properties hacks like `*display: inline;`
 
-### options.removeAllComments
+#### options.removeAllComments
 Type: `Boolean|undefined`
 Default value: `undefined`
 
@@ -130,7 +130,7 @@ grunt.initConfig({
 });
 ```
 
-## Acknowledgements 
+## Acknowledgements
 This task is mostly based on [grunt-autoprefixer](https://github.com/nDmitry/grunt-autoprefixer) by Dmitry Nikitenko.
 
 ## Contributing

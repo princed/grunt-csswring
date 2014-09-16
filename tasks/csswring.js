@@ -47,15 +47,12 @@ module.exports = function(grunt) {
 
     /**
      * @param {string} input Input CSS
-     * @param {string} from Input path
      * @param {string} to Output path
      * @returns {{css: string, map?: string}}
      */
-    function minify(input, from, to) {
+    function minify(input, to) {
         return minifier.process(input, {
-            map: getMapOption(from),
             inlineMap: options.mapInline,
-            from: from,
             to: to
         });
     }
@@ -82,7 +79,7 @@ module.exports = function(grunt) {
         }
 
         this.files.forEach(function(f) {
-            f.src
+            var parsed = f.src
                 .filter(function(filepath) {
 
                     if (!grunt.file.exists(filepath)) {
@@ -92,19 +89,27 @@ module.exports = function(grunt) {
                         return true;
                     }
                 })
-                .forEach(function(filepath) {
-                    var dest = f.dest || filepath;
+                .reduce(function(parsed, filepath) {
                     var input = grunt.file.read(filepath);
-                    var output = minify(input, filepath, dest);
+                    var output = postcss.parse(input, { from: filepath, map: getMapOption(filepath)});
 
-                    grunt.file.write(dest, output.css);
-                    grunt.log.writeln('File ' + chalk.cyan(dest) + ' created: ' + maxmin(input, output.css, options.report === 'gzip') );
+                    return parsed ? parsed.append(output) : output;
+                }, null);
 
-                    if (output.map) {
-                        grunt.file.write(dest + '.map', output.map);
-                        grunt.log.writeln('File ' + chalk.cyan(dest + '.map') + ' created (source map).');
-                    }
-                });
+            if (!parsed) {
+                return;
+            }
+
+            var inputCss = parsed.toResult().css;
+            var result = minify(parsed, f.dest);
+
+            grunt.file.write(f.dest, result.css);
+            grunt.log.writeln('File ' + chalk.cyan(f.dest) + ' created: ' + maxmin(inputCss, result.css, options.report === 'gzip') );
+
+            if (result.map) {
+                grunt.file.write(f.dest + '.map', result.map);
+                grunt.log.writeln('File ' + chalk.cyan(f.dest + '.map') + ' created (source map).');
+            }
         });
     });
 };
