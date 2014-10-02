@@ -1,4 +1,5 @@
 # grunt-csswring
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/princed/grunt-csswring?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 > Source Maps aware CSS minification task. Based on [CSSWring](https://github.com/hail2u/node-csswring) based on [PostCSS](https://github.com/ai/postcss).
 
