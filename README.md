@@ -4,6 +4,12 @@
 
 [![Dependency Status](https://gemnasium.com/princed/grunt-csswring.svg)](https://gemnasium.com/princed/grunt-csswring)
 
+## DEPRECATED
+
+Instead there is:
+* task shipped with [CSSWring](https://github.com/hail2u/node-csswring#grunt-plugin-usage) itself
+* [grunt-postcss](https://github.com/nDmitry/grunt-postcss) to apply multiple transformation to css in one pass.
+
 ## Getting Started
 This plugin requires Grunt `~0.4.0`
 
