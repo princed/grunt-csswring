@@ -53,6 +53,7 @@ module.exports = function(grunt) {
     function minify(input, to) {
         return minifier.process(input, {
             inlineMap: options.mapInline,
+            map: options.map,
             to: to
         });
     }
